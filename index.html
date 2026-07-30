@@ -5,302 +5,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="The official website for the Ghebremichael Family Reunion 2027 in Houston, Texas."
+      content="The official website for the GHEBREMICHAEL Family Reunion 2027 in Houston, Texas."
     />
-    <meta name="theme-color" content="#641c2e" />
-    <title>Ghebremichael Family Reunion 2027</title>
+    <meta name="theme-color" content="#681527" />
+    <title>GHEBREMICHAEL Family Reunion 2027</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header class="site-header" id="top">
-      <a class="brand" href="#home" aria-label="Ghebremichael Family Reunion home">
-        <span class="brand-mark" aria-hidden="true">G</span>
-        <span>Family Reunion <strong>2027</strong></span>
-      </a>
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="GHEBREMICHAEL Family Connection home">
+          <svg class="family-logo" viewBox="0 0 120 120" role="img" aria-label="Family tree logo">
+            <circle cx="60" cy="56" r="48" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="M60 99V58m0 18L43 55m17 12 18-22M57 94 43 107m20-13 15 13M60 56 50 37m10 18 7-28"
+              fill="none" stroke="#b27a20" stroke-width="5" stroke-linecap="round" />
+            <g fill="#204d32">
+              <ellipse cx="32" cy="47" rx="7" ry="4" transform="rotate(25 32 47)" />
+              <ellipse cx="42" cy="31" rx="7" ry="4" transform="rotate(45 42 31)" />
+              <ellipse cx="55" cy="22" rx="7" ry="4" transform="rotate(70 55 22)" />
+              <ellipse cx="70" cy="20" rx="7" ry="4" transform="rotate(-65 70 20)" />
+              <ellipse cx="84" cy="30" rx="7" ry="4" transform="rotate(-40 84 30)" />
+              <ellipse cx="90" cy="47" rx="7" ry="4" transform="rotate(-20 90 47)" />
+              <ellipse cx="42" cy="51" rx="7" ry="4" transform="rotate(-25 42 51)" />
+              <ellipse cx="75" cy="43" rx="7" ry="4" transform="rotate(30 75 43)" />
+            </g>
+            <g fill="#7f162a">
+              <circle cx="28" cy="61" r="5" /><circle cx="49" cy="42" r="5" />
+              <circle cx="68" cy="32" r="5" /><circle cx="85" cy="58" r="5" />
+            </g>
+            <path d="M25 91c12-18 24-14 30-3-11 1-20 8-30 3Z" fill="#7f162a" />
+          </svg>
+          <span class="brand-copy">
+            <strong>GHEBREMICHAEL</strong>
+            <span>FAMILY CONNECTION</span>
+            <em>Connecting Our Family Across Generations</em>
+          </span>
+        </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-navigation"
-        aria-label="Open navigation menu"
-      >
-        <span></span><span></span><span></span>
-      </button>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
 
-      <nav id="site-navigation" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#purpose">Our Purpose</a>
-        <a href="#countdown">Countdown</a>
-        <a href="#family">Family Photos</a>
-        <a href="#updates">Updates</a>
-        <a href="#houston">Houston</a>
-        <a href="#team">Our Team</a>
-        <a class="nav-contact" href="#contact">Contact</a>
-      </nav>
+        <nav id="site-navigation" aria-label="Main navigation">
+          <a class="active" href="#home">Home</a>
+          <a href="#purpose">Our Purpose</a>
+          <a href="#family">Our Family</a>
+          <a href="#reunion">Reunion 2027</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </header>
 
-    <!--
-      HERO PHOTO: To use a wide family photograph, add the image to this project
-      and replace the commented background-image line in the .hero rule in style.css.
-      The burgundy overlays are already included to keep the text readable.
-    -->
-    <main>
+    <main id="main-content">
       <section class="hero" id="home" aria-labelledby="hero-title">
-        <div class="hero-content reveal">
-          <p class="eyebrow light">A celebration of family &amp; connection</p>
-          <h1 id="hero-title">Ghebremichael<br />Family Reunion <em>2027</em></h1>
-          <p class="hero-tagline">Connecting Our Family Across Generations.</p>
-          <p class="hero-subtitle">Together Again <span>•</span> Houston, Texas</p>
+        <div class="hero-content">
+          <h1 id="hero-title">
+            <span>GHEBREMICHAEL</span>
+            <strong>FAMILY REUNION 2027</strong>
+          </h1>
+          <div class="hero-ornament" aria-hidden="true"><span></span>◆<span></span></div>
+          <p class="hero-tagline">Connecting Our Family Across Generations</p>
+          <div class="event-details" aria-label="Houston, Texas, Summer 2027">
+            <span><b aria-hidden="true">●</b> Houston, Texas</span>
+            <i aria-hidden="true"></i>
+            <span><b aria-hidden="true">▣</b> Summer 2027</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">
+              <span aria-hidden="true">♟</span> Register
+            </a>
+            <a class="button button-secondary" href="#purpose">
+              <span aria-hidden="true">ⓘ</span> Learn More
+            </a>
+          </div>
+        </div>
+      </section>
 
-          <div class="date-banner" aria-label="Save the date for summer 2027">
-            <div><span>Save</span><span>the Date</span></div>
-            <span class="date-divider" aria-hidden="true"></span>
-            <p><strong>Summer 2027</strong><small>Houston, Texas</small></p>
+      <div class="curved-divider" aria-hidden="true"></div>
+
+      <section class="welcome-section" id="family" aria-labelledby="welcome-title">
+        <div class="welcome-inner">
+          <div class="welcome-copy reveal">
+            <h2 id="welcome-title">Welcome to Our Family</h2>
+            <div class="section-ornament" aria-hidden="true"><span></span>❖<span></span></div>
+            <p>
+              The GHEBREMICHAEL Family Reunion is more than a gathering—it’s a
+              celebration of our heritage, our bonds, and our bright future together.
+              Join us as we create new memories and strengthen the connection that
+              spans across generations.
+            </p>
           </div>
 
-          <a class="button button-gold" href="#contact">
-            Registration Coming Soon <span aria-hidden="true">→</span>
-          </a>
+          <div class="feature-grid" aria-label="Our family values">
+            <article class="feature reveal">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <circle cx="40" cy="22" r="10" /><circle cx="19" cy="31" r="8" />
+                <circle cx="61" cy="31" r="8" />
+                <path d="M22 58c0-15 7-23 18-23s18 8 18 23M5 58c0-12 5-19 14-19 5 0 9 3 11 7m45 12c0-12-5-19-14-19-5 0-9 3-11 7" />
+                <path class="feature-accent" d="M40 67 25 53c-8-9 6-19 15-8 9-11 23-1 15 8Z" />
+              </svg>
+              <h3>One Family</h3>
+            </article>
+            <article class="feature reveal">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <path d="M40 66 19 45c-12-13 8-29 21-13 13-16 33 0 21 13Z" />
+                <path d="M7 72c4-22 13-27 22-34m44 34c-4-22-13-27-22-34" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+              </svg>
+              <h3>One Purpose</h3>
+            </article>
+            <article class="feature reveal">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <path d="M40 69V38m0 17L27 43m13 3 13-17M38 67 27 76m15-9 11 9"
+                  fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+                <g fill="currentColor">
+                  <circle cx="19" cy="31" r="6" /><circle cx="29" cy="19" r="6" />
+                  <circle cx="42" cy="14" r="6" /><circle cx="56" cy="20" r="6" />
+                  <circle cx="63" cy="33" r="6" /><circle cx="32" cy="35" r="6" />
+                  <circle cx="49" cy="31" r="6" />
+                </g>
+              </svg>
+              <h3>One Legacy</h3>
+            </article>
+          </div>
         </div>
-        <a class="scroll-cue" href="#purpose" aria-label="Scroll to Our Purpose">
-          <span>Our purpose</span><span aria-hidden="true">↓</span>
-        </a>
       </section>
 
       <section class="purpose-section" id="purpose" aria-labelledby="purpose-title">
-        <div class="section purpose-card reveal">
-          <div class="section-heading">
-            <p class="eyebrow">Our family, our legacy</p>
-            <h2 id="purpose-title">Our Purpose</h2>
-            <span class="gold-line" aria-hidden="true"></span>
-          </div>
+        <div class="content-narrow reveal">
+          <p class="eyebrow">Our family, our legacy</p>
+          <h2 id="purpose-title">Our Purpose</h2>
+          <div class="section-ornament light" aria-hidden="true"><span></span>❖<span></span></div>
           <blockquote>
-            “The primary purpose of this reunion is to strengthen and maintain our
-            family connections, especially among the children and younger generations,
-            who may not have many opportunities to see and interact with one another
-            regularly due to distance and other circumstances.”
+            “To strengthen and maintain our family connections, especially among
+            the children and younger generations, and to honor the story that joins
+            us across every distance.”
           </blockquote>
         </div>
       </section>
 
-      <section class="countdown-section" id="countdown" aria-labelledby="countdown-title">
-        <div class="section reveal">
-          <p class="eyebrow light">Until we’re together again</p>
-          <h2 id="countdown-title">The countdown is on</h2>
-          <!-- Change only this data-reunion-date value when the final date is confirmed. -->
-          <div
-            class="countdown"
-            data-reunion-date="2027-07-16T17:00:00-05:00"
-            role="timer"
-            aria-live="polite"
-          >
-            <div class="time-card"><strong id="days">000</strong><span>Days</span></div>
-            <div class="time-card"><strong id="hours">00</strong><span>Hours</span></div>
-            <div class="time-card"><strong id="minutes">00</strong><span>Minutes</span></div>
-            <div class="time-card"><strong id="seconds">00</strong><span>Seconds</span></div>
+      <section class="reunion-section" id="reunion" aria-labelledby="reunion-title">
+        <div class="section-shell reunion-layout">
+          <div class="reveal">
+            <p class="eyebrow">Save the season</p>
+            <h2 id="reunion-title">Houston Awaits</h2>
+            <p>
+              We’re gathering in Houston, Texas, in Summer 2027. Venue, travel,
+              registration pricing, and the full reunion schedule will be shared as
+              plans are finalized.
+            </p>
+            <a class="text-link" href="#contact">Receive reunion updates →</a>
           </div>
-          <p class="date-note">
-            <strong>Placeholder date:</strong> July 16, 2027
-            <span>•</span>
-            Update <code>data-reunion-date</code> in <code>index.html</code>
-          </p>
+          <div class="date-card reveal" aria-label="Family Reunion, Summer 2027">
+            <span>Family Reunion</span>
+            <strong>2027</strong>
+            <p>Houston, Texas</p>
+            <small>Summer</small>
+          </div>
         </div>
       </section>
 
-      <section class="family-section section" id="family" aria-labelledby="family-title">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Generations of love</p>
-          <h2 id="family-title">Our Family</h2>
-          <p class="section-intro">
-            Every photograph holds a story. This gallery will celebrate the people,
-            places, and moments that connect us.
-          </p>
-          <span class="gold-line" aria-hidden="true"></span>
-        </div>
-
-        <!--
-          FAMILY PHOTO PLACEHOLDERS: For each figure below, replace the
-          <div class="photo-placeholder ...">...</div> with:
-          <img class="family-photo" src="images/your-photo.jpg" alt="Describe the family photo" />
-          Keep the <figcaption> and change its text to match the photograph.
-        -->
-        <div class="family-gallery">
-          <figure class="featured-photo reveal">
-            <div class="photo-placeholder photo-placeholder-large" role="img" aria-label="Featured family photo placeholder">
-              <div class="photo-icon" aria-hidden="true"><span>G</span></div>
-              <p>Featured Family Photograph</p>
-              <span>Wide reunion or multigenerational portrait</span>
+      <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Generations of love</p>
+            <h2 id="gallery-title">Our Family Gallery</h2>
+            <p>Every photograph holds a story. Family memories will be added here as we gather them.</p>
+          </div>
+          <div class="gallery-grid">
+            <div class="photo-placeholder large reveal" role="img" aria-label="Featured multigenerational family photograph placeholder">
+              <span>Featured Family Photograph</span>
             </div>
-            <figcaption>Generations together — caption can be changed later.</figcaption>
-          </figure>
-
-          <div class="photo-grid">
-            <figure class="reveal">
-              <div class="photo-placeholder photo-placeholder-small" role="img" aria-label="Family memories photo placeholder">
-                <div class="photo-icon small" aria-hidden="true"><span>G</span></div>
-                <p>Family Memories</p>
-              </div>
-              <figcaption>A favorite family gathering.</figcaption>
-            </figure>
-            <figure class="reveal">
-              <div class="photo-placeholder photo-placeholder-small" role="img" aria-label="Younger generations photo placeholder">
-                <div class="photo-icon small" aria-hidden="true"><span>G</span></div>
-                <p>Younger Generations</p>
-              </div>
-              <figcaption>Cousins growing together.</figcaption>
-            </figure>
-            <figure class="reveal">
-              <div class="photo-placeholder photo-placeholder-small" role="img" aria-label="Family legacy photo placeholder">
-                <div class="photo-icon small" aria-hidden="true"><span>G</span></div>
-                <p>Our Legacy</p>
-              </div>
-              <figcaption>Honoring those who came before us.</figcaption>
-            </figure>
+            <div class="photo-placeholder reveal" role="img" aria-label="Family memories photograph placeholder"><span>Family Memories</span></div>
+            <div class="photo-placeholder reveal" role="img" aria-label="Younger generations photograph placeholder"><span>Younger Generations</span></div>
           </div>
         </div>
       </section>
 
-      <section class="updates section" id="updates" aria-labelledby="updates-title">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Stay in the know</p>
-          <h2 id="updates-title">Latest Updates</h2>
-          <span class="gold-line" aria-hidden="true"></span>
-        </div>
-        <div class="card-grid">
-          <article class="update-card reveal">
-            <span class="card-number" aria-hidden="true">01</span>
-            <p class="card-date">Update #1</p>
-            <h3>Initial Reunion Communication</h3>
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-shell contact-layout">
+          <div class="reveal">
+            <p class="eyebrow">Keep in touch</p>
+            <h2 id="contact-title">Stay Connected</h2>
             <p>
-              Planning has begun! This website will be the family’s central place for
-              reunion news, dates, and helpful information.
-            </p>
-            <span class="card-tag">Announcement</span>
-          </article>
-          <article class="update-card reveal">
-            <span class="card-number" aria-hidden="true">02</span>
-            <p class="card-date">Save the Date</p>
-            <h3>Summer 2027</h3>
-            <p>
-              Set aside time to gather with family in Houston. The final reunion dates
-              will be announced as soon as they are confirmed.
-            </p>
-            <span class="card-tag">Date</span>
-          </article>
-          <article class="update-card reveal">
-            <span class="card-number" aria-hidden="true">03</span>
-            <p class="card-date">Registration</p>
-            <h3>Coming Soon</h3>
-            <p>
-              Registration details, pricing, payment information, and important
-              deadlines will be shared here.
-            </p>
-            <span class="card-tag">Registration</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="houston-section" id="houston" aria-labelledby="houston-title">
-        <div class="section">
-          <div class="section-heading centered reveal">
-            <p class="eyebrow light">Our host city</p>
-            <h2 id="houston-title">Welcome to Houston</h2>
-            <p class="section-intro light-copy">
-              Travel and venue details will be added as plans are finalized.
-            </p>
-            <span class="gold-line" aria-hidden="true"></span>
-          </div>
-          <div class="houston-grid">
-            <article class="info-card reveal">
-              <span class="info-icon" aria-hidden="true">⌂</span>
-              <h3>Reunion Venue</h3>
-              <p>Venue name and event location to be announced.</p>
-            </article>
-            <article class="info-card reveal">
-              <span class="info-icon" aria-hidden="true">▤</span>
-              <h3>Nearby Hotels</h3>
-              <p>Recommended accommodations and group rates coming soon.</p>
-            </article>
-            <article class="info-card reveal">
-              <span class="info-icon" aria-hidden="true">✈</span>
-              <h3>Airport Information</h3>
-              <p>Arrival options and local transportation guidance coming soon.</p>
-            </article>
-            <article class="info-card reveal">
-              <span class="info-icon" aria-hidden="true">✦</span>
-              <h3>Local Attractions</h3>
-              <p>Family-friendly places to explore will be shared later.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="team-section" id="team" aria-labelledby="team-title">
-        <div class="section team-layout">
-          <div class="team-intro reveal">
-            <p class="eyebrow light">Working together</p>
-            <h2 id="team-title">Meet the<br />Planning Team</h2>
-            <p>
-              The final committee list will be added here as planning roles are
-              confirmed.
+              Questions, ideas, or ready to help? Official registration and family
+              contact information will be announced here.
             </p>
           </div>
-          <div class="team-list">
-            <article class="team-member reveal">
-              <span class="avatar" aria-hidden="true">01</span>
-              <div><h3>Team Member Name</h3><p>Reunion Chair</p></div>
-            </article>
-            <article class="team-member reveal">
-              <span class="avatar" aria-hidden="true">02</span>
-              <div><h3>Team Member Name</h3><p>Activities Coordinator</p></div>
-            </article>
-            <article class="team-member reveal">
-              <span class="avatar" aria-hidden="true">03</span>
-              <div><h3>Team Member Name</h3><p>Hospitality Lead</p></div>
-            </article>
-            <article class="team-member reveal">
-              <span class="avatar" aria-hidden="true">04</span>
-              <div><h3>Team Member Name</h3><p>Communications Lead</p></div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-section section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-intro reveal">
-          <p class="eyebrow">Keep in touch</p>
-          <h2 id="contact-title">Contact Us</h2>
-          <p>
-            Questions, ideas, or a desire to help? Contact information will be
-            activated after the family’s official reunion accounts are created.
-          </p>
-        </div>
-        <div class="contact-grid">
-          <article class="contact-card reveal">
+          <div class="contact-card reveal">
             <span aria-hidden="true">✉</span>
-            <div><h3>Gmail</h3><p>familyreunion@gmail.com</p><small>Placeholder address</small></div>
-          </article>
-          <article class="contact-card reveal">
-            <span aria-hidden="true">☎</span>
-            <div><h3>Google Voice</h3><p>Number coming soon</p><small>No personal number displayed</small></div>
-          </article>
-          <article class="contact-card reveal">
-            <span aria-hidden="true">◉</span>
-            <div><h3>WhatsApp</h3><p>Family group link coming soon</p><small>Official group contact</small></div>
-          </article>
+            <div>
+              <h3>Family Updates</h3>
+              <p>Registration details are coming soon.</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <a class="brand footer-brand" href="#home">
-        <span class="brand-mark" aria-hidden="true">G</span>
-        <span>Family Reunion <strong>2027</strong></span>
-      </a>
-      <p>© 2027 Ghebremichael Family Reunion</p>
-      <a href="#home">Back to top ↑</a>
+      <p>© 2027 GHEBREMICHAEL Family Connection</p>
+      <a href="#top">Back to top ↑</a>
     </footer>
   </body>
 </html>
