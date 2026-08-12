@@ -18,6 +18,41 @@ navigation.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => closeMenu());
 });
 
+const countdown = document.querySelector(".countdown");
+const reunionStart = new Date("2027-01-16T00:00:00-06:00").getTime();
+let countdownInterval;
+
+function updateCountdown() {
+  const timeRemaining = Math.max(0, reunionStart - Date.now());
+  const totalSeconds = Math.floor(timeRemaining / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  document.querySelector("#countdown-days").textContent = String(days).padStart(3, "0");
+  document.querySelector("#countdown-hours").textContent = String(hours).padStart(2, "0");
+  document.querySelector("#countdown-minutes").textContent = String(minutes).padStart(2, "0");
+  document.querySelector("#countdown-seconds").textContent = String(seconds).padStart(2, "0");
+
+  if (timeRemaining === 0) {
+    clearInterval(countdownInterval);
+    countdown.classList.add("countdown-complete");
+    countdown.removeAttribute("role");
+    countdown.removeAttribute("aria-label");
+    countdown.setAttribute("aria-live", "polite");
+    countdown.textContent = "The Reunion Weekend Is Here!";
+    return false;
+  }
+
+  return true;
+}
+
+if (countdown) {
+  const isCountingDown = updateCountdown();
+  if (isCountingDown) countdownInterval = setInterval(updateCountdown, 1000);
+}
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && navigation.classList.contains("is-open")) {
     closeMenu({ returnFocus: true });

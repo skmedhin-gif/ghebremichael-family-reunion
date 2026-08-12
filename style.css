@@ -188,9 +188,19 @@ h1 strong {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.event-details span { display: flex; align-items: center; gap: 10px; }
+.event-details > span { display: flex; align-items: center; gap: 10px; }
 .event-details b { color: var(--gold-light); }
 .event-details i { width: 1px; height: 27px; background: var(--gold); }
+.event-date-copy {
+  display: grid;
+  gap: 1px;
+  text-align: left;
+}
+.event-date-copy strong, .event-date-copy time {
+  font: inherit;
+  line-height: 1.2;
+}
+.event-date-copy strong { color: var(--gold-light); }
 .hero-actions { display: flex; justify-content: center; gap: 18px; margin-top: 27px; }
 .button {
   display: inline-flex;
@@ -223,6 +233,77 @@ h1 strong {
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   background: var(--cream);
   box-shadow: inset 0 4px 0 var(--gold);
+}
+
+.countdown-card {
+  position: absolute;
+  z-index: 2;
+  right: max(24px, calc((100vw - 1440px) / 2 + 24px));
+  bottom: 48px;
+  left: auto;
+  width: 224px;
+  padding: 15px 16px 14px;
+  border: 1px solid rgba(227, 189, 104, .72);
+  border-radius: 5px;
+  background: rgba(77, 10, 25, .82);
+  box-shadow: 0 12px 32px rgba(25, 3, 9, .35);
+  color: var(--cream);
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+.countdown-card h2 {
+  margin: 0 0 10px;
+  color: var(--gold-light);
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+.countdown-unit {
+  display: grid;
+  min-width: 0;
+  padding: 8px 3px 7px;
+  border: 1px solid rgba(227, 189, 104, .25);
+}
+.countdown-unit strong {
+  color: var(--cream);
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: .8;
+}
+.countdown-unit span {
+  margin-top: 8px;
+  color: var(--gold-light);
+  font-size: .5rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.countdown-date {
+  margin: 11px 0 0;
+  color: var(--cream);
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.countdown-complete {
+  display: block;
+  margin: 15px 0 12px;
+  color: var(--cream);
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .welcome-section {
@@ -305,17 +386,61 @@ blockquote {
 .reunion-layout { display: grid; grid-template-columns: 1.1fr .65fr; align-items: center; gap: 90px; }
 .reunion-layout > div:first-child p:not(.eyebrow) { max-width: 650px; color: var(--muted); }
 .text-link { color: var(--burgundy); font-weight: 700; text-decoration-color: var(--gold); text-underline-offset: 5px; }
-.date-card {
-  padding: 45px 30px;
+.event-card {
+  overflow: hidden;
   border: 1px solid var(--gold);
   background: var(--burgundy);
   box-shadow: var(--shadow);
   color: var(--white);
   text-align: center;
 }
-.date-card span, .date-card small { letter-spacing: .18em; text-transform: uppercase; }
-.date-card strong { display: block; color: var(--gold-light); font-family: var(--serif); font-size: 6rem; line-height: 1; }
-.date-card p { margin: 7px 0; font-family: var(--serif); font-size: 1.5rem; }
+.event-card-image {
+  min-height: 190px;
+  border-bottom: 4px solid var(--gold);
+  background:
+    linear-gradient(rgba(38, 15, 16, .08), rgba(64, 8, 22, .38)),
+    url("assets/images/houston-skyline-hero.png") center 62% / cover;
+}
+.event-card-panel {
+  padding: 31px 24px 33px;
+  background:
+    radial-gradient(circle at 50% 0, rgba(227, 189, 104, .11), transparent 55%),
+    var(--burgundy);
+}
+.event-card-kicker, .event-card-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.event-card-kicker { color: var(--gold-light); }
+.event-card-kicker svg, .event-card-location svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+.event-card-panel time {
+  display: block;
+  margin: 12px 0 15px;
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: .025em;
+  line-height: .95;
+  text-transform: uppercase;
+}
+.event-card-location { color: var(--cream); }
 
 .gallery-section { padding: 110px 0; }
 .section-heading { max-width: 700px; margin: 0 auto 45px; text-align: center; }
@@ -384,7 +509,8 @@ footer p { margin: 0; }
   nav.is-open { max-height: 430px; padding: 12px 24px 22px; opacity: 1; }
   nav a { padding: 12px 4px; font-size: .75rem; }
   nav a::after { display: none; }
-  .hero { min-height: 680px; }
+  .hero { min-height: 780px; padding-bottom: 265px; }
+  .countdown-card { right: 24px; bottom: 48px; left: auto; width: 224px; margin: 0; }
   .welcome-inner, .reunion-layout, .contact-layout { grid-template-columns: 1fr; gap: 50px; }
   .welcome-inner { width: min(740px, calc(100% - 40px)); }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
@@ -396,16 +522,20 @@ footer p { margin: 0; }
   .brand { gap: 8px; }
   .brand-copy strong { font-size: 1.2rem; }
   .brand-copy > span { margin-bottom: 0; font-size: .63rem; letter-spacing: .15em; }
-  .hero { min-height: 665px; padding: 65px 16px 100px; background-position: 55% center; }
+  .hero { min-height: 790px; padding: 55px 16px 250px; background-position: 55% center; }
   .hero-content { padding-inline: 0; }
   h1 span { font-size: clamp(2.65rem, 14vw, 4rem); letter-spacing: 0; }
   h1 strong { margin-top: 12px; font-size: 1.35rem; letter-spacing: .13em; line-height: 1.2; }
   .hero-tagline { margin-top: 16px; line-height: 1.15; }
   .event-details { gap: 10px; font-size: .66rem; letter-spacing: .03em; }
-  .event-details span { gap: 5px; }
+  .event-details > span { gap: 5px; }
   .hero-actions { flex-direction: column; align-items: center; gap: 12px; }
   .button { width: min(285px, 100%); min-height: 56px; }
   .curved-divider { height: 35px; margin-top: -32px; }
+  .countdown-card { right: 16px; bottom: 34px; left: auto; width: 210px; padding: 13px 14px 12px; }
+  .countdown { gap: 5px; }
+  .countdown-unit strong { font-size: 1.7rem; }
+  .countdown-unit span { font-size: .44rem; }
   .welcome-section { padding-top: 40px; }
   .feature-grid { grid-template-columns: 1fr; gap: 12px; }
   .feature { display: flex; min-height: auto; align-items: center; justify-content: center; gap: 18px; padding: 20px; border-top: 1px solid #decfb7; border-left: 0; }
@@ -413,7 +543,8 @@ footer p { margin: 0; }
   .feature h3 { min-width: 110px; text-align: left; }
   .reunion-section, .gallery-section, .contact-section { padding: 80px 0; }
   .section-shell { width: calc(100% - 36px); }
-  .date-card strong { font-size: 4.5rem; }
+  .event-card-image { min-height: 170px; }
+  .event-card-panel { padding: 27px 18px 29px; }
   .gallery-grid { grid-template-columns: 1fr; }
   .photo-placeholder, .photo-placeholder.large { min-height: 240px; grid-column: auto; }
   footer { align-items: flex-start; gap: 10px; flex-direction: column; }
