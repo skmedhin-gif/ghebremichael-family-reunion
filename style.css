@@ -464,6 +464,13 @@ blockquote {
 .contact-card { display: flex; align-items: center; gap: 22px; padding: 32px; border: 1px solid rgba(227,189,104,.45); background: rgba(255,255,255,.06); }
 .contact-card > span { color: var(--gold-light); font-size: 2rem; }
 .contact-card h3, .contact-card p { margin-bottom: 2px; }
+.contact-card a {
+  color: var(--gold-light);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  text-underline-offset: 4px;
+}
+.contact-card a:hover, .contact-card a:focus-visible { color: var(--white); }
 footer {
   display: flex;
   min-height: 85px;
