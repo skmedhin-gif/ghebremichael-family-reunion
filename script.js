@@ -72,6 +72,27 @@ document.addEventListener("click", (event) => {
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const revealItems = document.querySelectorAll(".reveal");
 
+const copyEmailButton = document.querySelector(".copy-email-button");
+
+if (copyEmailButton) {
+  copyEmailButton.addEventListener("click", async () => {
+    const email = copyEmailButton.dataset.copyEmail;
+    const status = copyEmailButton.closest(".zelle-email-block").querySelector(".copy-status");
+
+    try {
+      await navigator.clipboard.writeText(email);
+      copyEmailButton.textContent = "Copied";
+      status.textContent = "Email copied to clipboard.";
+      window.setTimeout(() => {
+        copyEmailButton.textContent = "Copy email";
+        status.textContent = "";
+      }, 2500);
+    } catch {
+      status.textContent = "Select the email address above to copy it.";
+    }
+  });
+}
+
 if (reducedMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 } else {

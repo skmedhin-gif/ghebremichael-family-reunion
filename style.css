@@ -458,6 +458,91 @@ blockquote {
   font-size: 1.45rem;
 }
 .photo-placeholder.large { grid-row: span 2; min-height: 490px; }
+.contributions-section {
+  padding: 110px 0;
+  background:
+    radial-gradient(circle at 8% 15%, rgba(189,133,41,.1), transparent 24%),
+    var(--cream-deep);
+}
+.contributions-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  align-items: center;
+  gap: clamp(55px, 8vw, 105px);
+}
+.contributions-copy > p:not(.eyebrow, .contribution-note) {
+  max-width: 680px;
+  margin-top: 24px;
+  color: var(--muted);
+}
+.contributions-copy .section-ornament { justify-content: flex-start; }
+.zelle-email-block {
+  max-width: 720px;
+  margin: 30px 0 25px;
+  padding: 20px 22px;
+  border-left: 4px solid var(--gold);
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(62,27,15,.09);
+}
+.zelle-email-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--green);
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.zelle-email-row { display: flex; align-items: center; gap: 15px; }
+.zelle-email-row a {
+  color: var(--burgundy);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-underline-offset: 4px;
+}
+.copy-email-button {
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  border: 1px solid var(--burgundy);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--burgundy);
+  font: 700 .68rem var(--sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.copy-email-button:hover, .copy-email-button:focus-visible {
+  background: var(--burgundy);
+  color: var(--white);
+}
+.copy-status { display: block; min-height: 1.2em; margin-top: 5px; color: var(--green); font-size: .72rem; }
+.contribution-note {
+  max-width: 680px;
+  margin-bottom: 0;
+  padding-left: 17px;
+  border-left: 2px solid var(--green);
+  color: var(--green);
+  font-size: .9rem;
+}
+.qr-card {
+  width: min(100%, 355px);
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid var(--gold);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.qr-card figcaption {
+  margin-bottom: 18px;
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.qr-card img { display: block; width: 100%; height: auto; }
 .contact-section { padding: 100px 0; background: var(--green); color: var(--white); }
 .contact-section h2 { color: var(--white); }
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; }
@@ -518,7 +603,10 @@ footer p { margin: 0; }
   nav a::after { display: none; }
   .hero { min-height: 780px; padding-bottom: 265px; }
   .countdown-card { right: 24px; bottom: 48px; left: auto; width: 224px; margin: 0; }
-  .welcome-inner, .reunion-layout, .contact-layout { grid-template-columns: 1fr; gap: 50px; }
+  .welcome-inner, .reunion-layout, .contributions-layout, .contact-layout { grid-template-columns: 1fr; gap: 50px; }
+  .contributions-copy { text-align: center; }
+  .contributions-copy .section-ornament { justify-content: center; }
+  .contributions-copy > p:not(.eyebrow, .contribution-note), .contribution-note { margin-right: auto; margin-left: auto; }
   .welcome-inner { width: min(740px, calc(100% - 40px)); }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .photo-placeholder.large { grid-column: 1 / -1; grid-row: auto; min-height: 400px; }
@@ -548,12 +636,15 @@ footer p { margin: 0; }
   .feature { display: flex; min-height: auto; align-items: center; justify-content: center; gap: 18px; padding: 20px; border-top: 1px solid #decfb7; border-left: 0; }
   .feature svg { width: 58px; height: 58px; margin: 0; }
   .feature h3 { min-width: 110px; text-align: left; }
-  .reunion-section, .gallery-section, .contact-section { padding: 80px 0; }
+  .reunion-section, .gallery-section, .contributions-section, .contact-section { padding: 80px 0; }
   .section-shell { width: calc(100% - 36px); }
   .event-card-image { min-height: 170px; }
   .event-card-panel { padding: 27px 18px 29px; }
   .gallery-grid { grid-template-columns: 1fr; }
   .photo-placeholder, .photo-placeholder.large { min-height: 240px; grid-column: auto; }
+  .zelle-email-row { align-items: stretch; flex-direction: column; }
+  .copy-email-button { align-self: center; }
+  .qr-card { width: min(100%, 330px); padding: 20px; }
   footer { align-items: flex-start; gap: 10px; flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) {
