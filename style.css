@@ -27,6 +27,7 @@ body {
 a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 svg { display: block; }
+img { max-width: 100%; height: auto; }
 .skip-link {
   position: fixed;
   z-index: 100;
@@ -580,11 +581,27 @@ footer p { margin: 0; }
   .hero { min-height: calc(100svh - 125px); }
 }
 @media (max-width: 900px) {
-  .header-inner { width: min(100% - 32px, 800px); min-height: 105px; }
+  html { scroll-padding-top: 105px; }
+  .header-inner { width: min(100% - 32px, 800px); min-height: 105px; gap: 16px; }
   .family-logo { width: 74px; height: 74px; }
   .brand-copy strong { font-size: 1.55rem; }
   .brand-copy > span { font-size: .85rem; }
-  .menu-toggle { display: block; padding: 10px; }
+  .brand { min-width: 0; }
+  .brand-copy { min-width: 0; }
+  .menu-toggle {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 8px;
+    place-content: center;
+    border-radius: 4px;
+  }
+  .menu-toggle:focus-visible { outline: 2px solid var(--burgundy); outline-offset: 2px; }
+  .menu-toggle span { transition: transform 180ms ease, opacity 180ms ease; }
+  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(8px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-8px) rotate(-45deg); }
   nav {
     position: absolute;
     top: 100%;
@@ -598,12 +615,21 @@ footer p { margin: 0; }
     opacity: 0;
     transition: max-height 250ms ease, opacity 180ms ease;
   }
-  nav.is-open { max-height: 430px; padding: 12px 24px 22px; opacity: 1; }
-  nav a { padding: 12px 4px; font-size: .75rem; }
+  nav.is-open { max-height: 430px; padding: 8px 24px 16px; opacity: 1; }
+  nav a { display: flex; min-height: 44px; align-items: center; padding: 10px 4px; font-size: .75rem; }
   nav a::after { display: none; }
-  .hero { min-height: 780px; padding-bottom: 265px; }
-  .countdown-card { right: 24px; bottom: 48px; left: auto; width: 224px; margin: 0; }
+  .hero { display: block; min-height: 0; padding: 60px 24px 38px; }
+  .hero-content { margin: 0 auto; }
+  .countdown-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 224px;
+    margin: 28px auto 0;
+  }
   .welcome-inner, .reunion-layout, .contributions-layout, .contact-layout { grid-template-columns: 1fr; gap: 50px; }
+  .welcome-inner > *, .reunion-layout > *, .contributions-layout > *, .contact-layout > * { min-width: 0; }
   .contributions-copy { text-align: center; }
   .contributions-copy .section-ornament { justify-content: center; }
   .contributions-copy > p:not(.eyebrow, .contribution-note), .contribution-note { margin-right: auto; margin-left: auto; }
@@ -612,40 +638,68 @@ footer p { margin: 0; }
   .photo-placeholder.large { grid-column: 1 / -1; grid-row: auto; min-height: 400px; }
 }
 @media (max-width: 600px) {
-  .header-inner { min-height: 92px; }
-  .family-logo { width: 64px; height: 64px; }
-  .brand { gap: 8px; }
-  .brand-copy strong { font-size: 1.2rem; }
-  .brand-copy > span { margin-bottom: 0; font-size: .63rem; letter-spacing: .15em; }
-  .hero { min-height: 790px; padding: 55px 16px 250px; background-position: 55% center; }
-  .hero-content { padding-inline: 0; }
-  h1 span { font-size: clamp(2.65rem, 14vw, 4rem); letter-spacing: 0; }
-  h1 strong { margin-top: 12px; font-size: 1.35rem; letter-spacing: .13em; line-height: 1.2; }
-  .hero-tagline { margin-top: 16px; line-height: 1.15; }
-  .event-details { gap: 10px; font-size: .66rem; letter-spacing: .03em; }
+  html { scroll-padding-top: 78px; }
+  .header-inner { width: calc(100% - 24px); min-height: 76px; }
+  .family-logo { width: 54px; height: 54px; }
+  .brand { gap: 7px; }
+  .brand-copy strong { font-size: clamp(1.05rem, 5vw, 1.3rem); letter-spacing: 0; }
+  .brand-copy > span { margin: 4px 0 0; font-size: clamp(.53rem, 2.5vw, .66rem); letter-spacing: .12em; }
+  .hero { padding: 38px 16px 30px; background-position: 55% center; }
+  .hero-content { padding: 10px 0 0; }
+  h1 span { font-size: clamp(2.25rem, 11.5vw, 3.15rem); letter-spacing: 0; line-height: 1; }
+  h1 strong { margin-top: 10px; font-size: clamp(1.05rem, 5.2vw, 1.35rem); letter-spacing: .1em; line-height: 1.2; }
+  .hero-tagline { margin: 13px auto; font-size: clamp(1.15rem, 5.5vw, 1.45rem); line-height: 1.15; }
+  .event-details { gap: 10px; font-size: clamp(.62rem, 2.8vw, .72rem); letter-spacing: .02em; }
   .event-details > span { gap: 5px; }
-  .hero-actions { flex-direction: column; align-items: center; gap: 12px; }
-  .button { width: min(285px, 100%); min-height: 56px; }
-  .curved-divider { height: 35px; margin-top: -32px; }
-  .countdown-card { right: 16px; bottom: 34px; left: auto; width: 210px; padding: 13px 14px 12px; }
+  .hero-actions { flex-direction: column; align-items: center; gap: 10px; margin-top: 20px; }
+  .button { width: min(280px, 100%); min-height: 50px; }
+  .curved-divider { height: 28px; margin-top: -25px; border-top-width: 7px; }
+  .countdown-card { width: min(210px, calc(100% - 32px)); margin-top: 24px; padding: 12px 13px 11px; }
+  .countdown-card h2 { margin-bottom: 8px; }
   .countdown { gap: 5px; }
   .countdown-unit strong { font-size: 1.7rem; }
   .countdown-unit span { font-size: .44rem; }
-  .welcome-section { padding-top: 40px; }
+  h2 { font-size: clamp(2rem, 10vw, 2.65rem); line-height: 1.02; }
+  .section-ornament { gap: 10px; }
+  .section-ornament span { width: min(72px, 22vw); }
+  .welcome-section { padding: 48px 0 56px; }
+  .welcome-inner { width: calc(100% - 36px); gap: 34px; }
   .feature-grid { grid-template-columns: 1fr; gap: 12px; }
-  .feature { display: flex; min-height: auto; align-items: center; justify-content: center; gap: 18px; padding: 20px; border-top: 1px solid #decfb7; border-left: 0; }
+  .feature { display: flex; min-height: auto; align-items: center; justify-content: center; gap: 18px; padding: 14px 20px; border-top: 1px solid #decfb7; border-left: 0; }
   .feature svg { width: 58px; height: 58px; margin: 0; }
   .feature h3 { min-width: 110px; text-align: left; }
-  .reunion-section, .gallery-section, .contributions-section, .contact-section { padding: 80px 0; }
+  .purpose-section { padding: 62px 18px; }
+  blockquote { margin-top: 22px; line-height: 1.4; }
+  .reunion-section, .gallery-section, .contributions-section, .contact-section { padding: 62px 0; }
   .section-shell { width: calc(100% - 36px); }
+  .reunion-layout, .contributions-layout, .contact-layout { gap: 36px; }
   .event-card-image { min-height: 170px; }
   .event-card-panel { padding: 27px 18px 29px; }
+  .event-card-panel time { font-size: clamp(2rem, 11vw, 2.7rem); }
+  .section-heading { margin-bottom: 30px; }
   .gallery-grid { grid-template-columns: 1fr; }
-  .photo-placeholder, .photo-placeholder.large { min-height: 240px; grid-column: auto; }
+  .photo-placeholder, .photo-placeholder.large { min-height: 210px; grid-column: auto; }
+  .zelle-email-block { margin: 24px 0 20px; padding: 17px 15px; }
   .zelle-email-row { align-items: stretch; flex-direction: column; }
-  .copy-email-button { align-self: center; }
-  .qr-card { width: min(100%, 330px); padding: 20px; }
+  .zelle-email-row a { font-size: .82rem; line-height: 1.45; }
+  .copy-email-button { min-height: 44px; align-self: center; padding-inline: 18px; }
+  .contribution-note { padding-left: 12px; text-align: left; }
+  .qr-card { width: min(100%, 285px); padding: 17px; }
+  .qr-card figcaption { margin-bottom: 14px; font-size: 1.2rem; }
+  .contact-card { gap: 14px; padding: 22px 18px; }
+  .contact-card > span { flex: 0 0 auto; font-size: 1.6rem; }
+  .contact-card > div { min-width: 0; }
+  .contact-card a { font-size: .82rem; line-height: 1.45; }
   footer { align-items: flex-start; gap: 10px; flex-direction: column; }
+}
+@media (max-width: 390px) {
+  .brand-copy strong { font-size: 1rem; }
+  .brand-copy > span { font-size: .5rem; letter-spacing: .09em; }
+  .family-logo { width: 50px; height: 50px; }
+  .event-details { align-items: stretch; flex-direction: column; gap: 6px; }
+  .event-details > span { justify-content: center; }
+  .event-details i { width: 70px; height: 1px; margin: 0 auto; }
+  .event-date-copy { text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
