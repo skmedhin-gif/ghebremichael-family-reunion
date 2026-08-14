@@ -644,21 +644,25 @@ footer p { margin: 0; }
   .brand { gap: 7px; }
   .brand-copy strong { font-size: clamp(1.05rem, 5vw, 1.3rem); letter-spacing: 0; }
   .brand-copy > span { margin: 4px 0 0; font-size: clamp(.53rem, 2.5vw, .66rem); letter-spacing: .12em; }
-  .hero { padding: 38px 16px 30px; background-position: 55% center; }
-  .hero-content { padding: 10px 0 0; }
-  h1 span { font-size: clamp(2.25rem, 11.5vw, 3.15rem); letter-spacing: 0; line-height: 1; }
-  h1 strong { margin-top: 10px; font-size: clamp(1.05rem, 5.2vw, 1.35rem); letter-spacing: .1em; line-height: 1.2; }
-  .hero-tagline { margin: 13px auto; font-size: clamp(1.15rem, 5.5vw, 1.45rem); line-height: 1.15; }
+  .hero { padding: 28px 16px 24px; background-position: 55% center; }
+  .hero-content { padding: 0; }
+  h1 { margin-bottom: 8px; }
+  h1 span { font-size: clamp(2rem, 9vw, 2.45rem); letter-spacing: 0; line-height: 1; }
+  h1 strong { margin-top: 7px; font-size: clamp(.98rem, 4.4vw, 1.18rem); letter-spacing: .08em; line-height: 1.15; }
+  .hero-ornament { gap: 10px; }
+  .hero-tagline { margin: 9px auto 10px; font-size: clamp(1.05rem, 4.8vw, 1.25rem); line-height: 1.1; }
   .event-details { gap: 10px; font-size: clamp(.62rem, 2.8vw, .72rem); letter-spacing: .02em; }
   .event-details > span { gap: 5px; }
-  .hero-actions { flex-direction: column; align-items: center; gap: 10px; margin-top: 20px; }
-  .button { width: min(280px, 100%); min-height: 50px; }
+  .hero-actions { flex-direction: column; align-items: center; gap: 8px; margin-top: 15px; }
+  .button { width: min(270px, 100%); min-height: 46px; padding: 7px 16px; }
   .curved-divider { height: 28px; margin-top: -25px; border-top-width: 7px; }
-  .countdown-card { width: min(210px, calc(100% - 32px)); margin-top: 24px; padding: 12px 13px 11px; }
-  .countdown-card h2 { margin-bottom: 8px; }
-  .countdown { gap: 5px; }
-  .countdown-unit strong { font-size: 1.7rem; }
+  .countdown-card { width: min(198px, calc(100% - 32px)); margin-top: 16px; padding: 10px 11px 9px; }
+  .countdown-card h2 { margin-bottom: 7px; font-size: .62rem; }
+  .countdown { gap: 4px; }
+  .countdown-unit { padding: 7px 3px 6px; }
+  .countdown-unit strong { font-size: 1.55rem; }
   .countdown-unit span { font-size: .44rem; }
+  .countdown-date { margin-top: 8px; font-size: .9rem; }
   h2 { font-size: clamp(2rem, 10vw, 2.65rem); line-height: 1.02; }
   .section-ornament { gap: 10px; }
   .section-ornament span { width: min(72px, 22vw); }
