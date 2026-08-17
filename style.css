@@ -661,6 +661,7 @@ footer p { margin: 0; }
   }
   .welcome-inner, .purpose-layout, .reunion-layout, .contributions-layout, .contact-layout { grid-template-columns: 1fr; gap: 50px; }
   .welcome-inner > *, .purpose-layout > *, .reunion-layout > *, .contributions-layout > *, .contact-layout > * { min-width: 0; }
+  .event-card { width: min(100%, 520px); margin-inline: auto; }
   .legacy-copy { text-align: center; }
   .legacy-copy h2, .legacy-copy > p:not(.eyebrow) { margin-right: auto; margin-left: auto; }
   .legacy-copy .section-ornament { justify-content: center; }
