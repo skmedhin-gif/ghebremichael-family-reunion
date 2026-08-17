@@ -356,13 +356,44 @@ h2 {
 }
 
 .purpose-section {
-  padding: 105px 24px;
+  padding: 82px 0;
   background:
-    linear-gradient(rgba(42,70,46,.93), rgba(24,59,38,.96)),
-    url("assets/images/houston-skyline-hero.png") center 62% / cover;
+    radial-gradient(circle at 10% 10%, rgba(227,189,104,.12), transparent 30%),
+    linear-gradient(145deg, #2a583b, #163726);
   color: var(--white);
-  text-align: center;
 }
+.purpose-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(420px, 1.18fr);
+  align-items: center;
+  gap: clamp(48px, 7vw, 88px);
+}
+.legacy-copy { min-width: 0; }
+.legacy-copy h2 { max-width: 520px; }
+.legacy-copy .section-ornament { justify-content: flex-start; }
+.legacy-copy > p:not(.eyebrow) { max-width: 540px; margin-bottom: 14px; }
+.legacy-copy > p:nth-of-type(2) {
+  color: var(--gold-light);
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.legacy-portrait {
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--gold-light);
+  background: rgba(255,250,240,.08);
+  box-shadow: 0 22px 60px rgba(4,20,11,.4);
+}
+.legacy-portrait::before {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(227,189,104,.45);
+  content: "";
+  pointer-events: none;
+}
+.legacy-portrait img { display: block; width: 100%; max-width: 100%; height: auto; }
 .content-narrow { width: min(800px, 100%); margin: auto; }
 .eyebrow {
   margin-bottom: 8px;
@@ -628,8 +659,12 @@ footer p { margin: 0; }
     width: 224px;
     margin: 28px auto 0;
   }
-  .welcome-inner, .reunion-layout, .contributions-layout, .contact-layout { grid-template-columns: 1fr; gap: 50px; }
-  .welcome-inner > *, .reunion-layout > *, .contributions-layout > *, .contact-layout > * { min-width: 0; }
+  .welcome-inner, .purpose-layout, .reunion-layout, .contributions-layout, .contact-layout { grid-template-columns: 1fr; gap: 50px; }
+  .welcome-inner > *, .purpose-layout > *, .reunion-layout > *, .contributions-layout > *, .contact-layout > * { min-width: 0; }
+  .legacy-copy { text-align: center; }
+  .legacy-copy h2, .legacy-copy > p:not(.eyebrow) { margin-right: auto; margin-left: auto; }
+  .legacy-copy .section-ornament { justify-content: center; }
+  .legacy-portrait { width: min(680px, 100%); margin: 0 auto; }
   .contributions-copy { text-align: center; }
   .contributions-copy .section-ornament { justify-content: center; }
   .contributions-copy > p:not(.eyebrow, .contribution-note), .contribution-note { margin-right: auto; margin-left: auto; }
@@ -672,7 +707,11 @@ footer p { margin: 0; }
   .feature { display: flex; min-height: auto; align-items: center; justify-content: center; gap: 18px; padding: 14px 20px; border-top: 1px solid #decfb7; border-left: 0; }
   .feature svg { width: 58px; height: 58px; margin: 0; }
   .feature h3 { min-width: 110px; text-align: left; }
-  .purpose-section { padding: 62px 18px; }
+  .purpose-section { padding: 58px 0; }
+  .purpose-layout { gap: 30px; }
+  .legacy-copy > p:not(.eyebrow) { margin-bottom: 12px; }
+  .legacy-copy > p:nth-of-type(2) { font-size: 1.15rem; }
+  .legacy-portrait { padding: 7px; }
   blockquote { margin-top: 22px; line-height: 1.4; }
   .reunion-section, .gallery-section, .contributions-section, .contact-section { padding: 62px 0; }
   .section-shell { width: calc(100% - 36px); }
