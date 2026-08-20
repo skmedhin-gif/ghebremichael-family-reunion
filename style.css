@@ -451,9 +451,12 @@ blockquote {
 .event-card-image {
   min-height: 190px;
   border-bottom: 4px solid var(--gold);
-  background:
-    linear-gradient(rgba(38, 15, 16, .08), rgba(64, 8, 22, .38)),
-    url("assets/images/houston-skyline-hero.png") center 62% / cover;
+  background-image:
+    linear-gradient(rgba(38, 15, 16, .04), rgba(64, 8, 22, .22)),
+    url("assets/images/riverstone-entrance.png");
+  background-position: center, 100% 25%;
+  background-repeat: no-repeat;
+  background-size: cover, 228% auto;
 }
 .event-card-panel {
   padding: 31px 24px 33px;
@@ -485,7 +488,7 @@ blockquote {
 }
 .event-card-panel time {
   display: block;
-  margin: 12px 0 15px;
+  margin: 0 0 15px;
   color: var(--white);
   font-family: var(--serif);
   font-size: clamp(2.3rem, 4.2vw, 3.4rem);
