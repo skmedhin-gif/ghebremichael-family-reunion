@@ -498,6 +498,105 @@ blockquote {
   text-transform: uppercase;
 }
 .event-card-location { color: var(--cream); }
+.hotel-subsection {
+  margin-top: 66px;
+  padding-top: 42px;
+  border-top: 1px solid rgba(189,133,41,.45);
+}
+.hotel-heading { max-width: 720px; margin: 0 auto 27px; text-align: center; }
+.hotel-heading h3 {
+  margin-bottom: 7px;
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.hotel-heading > p:last-child { margin-bottom: 0; color: var(--muted); font-size: .9rem; }
+.hotel-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.hotel-card {
+  display: flex;
+  min-width: 0;
+  padding: 25px 27px;
+  flex-direction: column;
+  border: 1px solid rgba(189,133,41,.55);
+  border-top: 4px solid var(--burgundy);
+  background: rgba(255,250,240,.78);
+  box-shadow: 0 12px 32px rgba(62,27,15,.09);
+}
+.hotel-card-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; }
+.hotel-card h4 {
+  margin: 0;
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.05;
+}
+.hotel-card address {
+  color: var(--muted);
+  font-size: .7rem;
+  font-style: normal;
+  line-height: 1.5;
+  text-align: right;
+}
+.group-rate {
+  margin: 19px 0 13px;
+  padding: 7px 10px;
+  background: var(--burgundy);
+  color: var(--gold-light);
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.hotel-rates { display: grid; margin: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.hotel-rates > div { padding: 3px 14px; text-align: center; }
+.hotel-rates > div + div { border-left: 1px solid rgba(189,133,41,.4); }
+.hotel-rates dt { color: var(--muted); font-size: .7rem; }
+.hotel-rates dd, .marriott-rate strong {
+  margin: 2px 0 0;
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.marriott-rate { display: grid; margin: 24px 0 17px; text-align: center; }
+.marriott-rate span { color: var(--muted); font-size: .72rem; }
+.hotel-detail { margin: 17px 0 20px; color: var(--green); font-size: .75rem; text-align: center; }
+.hotel-button {
+  display: inline-flex;
+  min-height: 44px;
+  margin-top: auto;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 1px solid var(--burgundy);
+  border-radius: 4px;
+  background: var(--burgundy);
+  color: var(--white);
+  font: 700 .67rem var(--sans);
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.hotel-button:hover, .hotel-button:focus-visible { background: var(--burgundy-dark); }
+.hotel-button:disabled {
+  border-color: rgba(104,21,39,.38);
+  background: rgba(104,21,39,.12);
+  color: rgba(63,12,24,.65);
+  cursor: not-allowed;
+}
+.hotel-note {
+  max-width: 820px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: .68rem;
+  font-style: italic;
+  text-align: center;
+}
 
 .gallery-section { padding: 110px 0; }
 .section-heading { max-width: 700px; margin: 0 auto 45px; text-align: center; }
@@ -747,6 +846,13 @@ footer p { margin: 0; }
   .event-card-image { min-height: 170px; }
   .event-card-panel { padding: 27px 18px 29px; }
   .event-card-panel time { font-size: clamp(2rem, 11vw, 2.7rem); }
+  .hotel-subsection { margin-top: 44px; padding-top: 34px; }
+  .hotel-heading { margin-bottom: 22px; }
+  .hotel-grid { grid-template-columns: 1fr; gap: 16px; }
+  .hotel-card { padding: 22px 20px; }
+  .hotel-card-header { grid-template-columns: 1fr; gap: 7px; text-align: center; }
+  .hotel-card address { text-align: center; }
+  .hotel-button { width: min(260px, 100%); }
   .section-heading { margin-bottom: 30px; }
   .gallery-grid { grid-template-columns: 1fr; }
   .photo-placeholder, .photo-placeholder.large { min-height: 210px; grid-column: auto; }
