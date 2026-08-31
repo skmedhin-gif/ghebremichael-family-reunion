@@ -601,21 +601,77 @@ blockquote {
 .gallery-section { padding: 110px 0; }
 .section-heading { max-width: 700px; margin: 0 auto 45px; text-align: center; }
 .section-heading p:last-child { color: var(--muted); }
-.gallery-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 18px; }
-.photo-placeholder {
-  display: grid;
-  min-height: 235px;
-  place-items: center;
-  border: 1px solid rgba(189,133,41,.4);
-  background: linear-gradient(145deg, rgba(104,21,39,.83), rgba(32,77,50,.82));
-  box-shadow: var(--shadow);
-  color: var(--white);
+.gallery-subtitle {
+  margin-bottom: 0;
+  color: var(--green);
   font-family: var(--serif);
-  font-size: 1.45rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-style: italic;
+  font-weight: 600;
 }
-.photo-placeholder.large { grid-row: span 2; min-height: 490px; }
+.generation-gallery {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 18px 14px;
+  flex-wrap: wrap;
+}
+.generation-card {
+  display: flex;
+  width: calc((100% - 70px) / 6);
+  min-width: 0;
+  margin: 0;
+  padding: 7px 7px 0;
+  flex-direction: column;
+  border: 1px solid rgba(189,133,41,.55);
+  background: var(--cream-deep);
+  box-shadow: 0 10px 28px rgba(62,27,15,.12);
+}
+.generation-portrait {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  place-items: center;
+  overflow: hidden;
+  background: #e9dfcd;
+}
+.generation-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.generation-card figcaption {
+  margin: 0;
+  padding: 8px 3px 9px;
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: clamp(.9rem, 1.45vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: .025em;
+  line-height: 1;
+  text-align: center;
+}
+.memorial-card { border-color: var(--gold); background: var(--burgundy); }
+.memorial-portrait {
+  padding: 18px 12px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(227,189,104,.16), transparent 48%),
+    var(--burgundy-dark);
+  color: var(--gold-light);
+  text-align: center;
+}
+.memorial-portrait svg { width: min(76px, 65%); margin: 0 auto 13px; }
+.memorial-portrait span {
+  color: var(--cream);
+  font-family: var(--serif);
+  font-size: .76rem;
+  font-style: italic;
+  line-height: 1.25;
+}
+.memorial-card figcaption { color: var(--gold-light); }
 .contributions-section {
-  padding: 110px 0;
+  padding: 80px 0;
   background:
     radial-gradient(circle at 8% 15%, rgba(189,133,41,.1), transparent 24%),
     var(--cream-deep);
@@ -624,7 +680,7 @@ blockquote {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
   align-items: center;
-  gap: clamp(55px, 8vw, 105px);
+  gap: clamp(42px, 6vw, 78px);
 }
 .contributions-copy > p:not(.eyebrow, .contribution-note) {
   max-width: 680px;
@@ -790,12 +846,12 @@ footer p { margin: 0; }
   .legacy-copy h2, .legacy-copy > p:not(.eyebrow) { margin-right: auto; margin-left: auto; }
   .legacy-copy .section-ornament { justify-content: center; }
   .legacy-portrait { width: min(680px, 100%); margin: 0 auto; }
+  .contributions-layout { gap: 38px; }
   .contributions-copy { text-align: center; }
   .contributions-copy .section-ornament { justify-content: center; }
   .contributions-copy > p:not(.eyebrow, .contribution-note), .contribution-note { margin-right: auto; margin-left: auto; }
   .welcome-inner { width: min(740px, calc(100% - 40px)); }
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
-  .photo-placeholder.large { grid-column: 1 / -1; grid-row: auto; min-height: 400px; }
+  .generation-card { width: calc((100% - 42px) / 4); }
 }
 @media (max-width: 600px) {
   html { scroll-padding-top: 78px; }
@@ -840,9 +896,11 @@ footer p { margin: 0; }
   .legacy-copy > p:nth-of-type(2) { font-size: 1.15rem; }
   .legacy-portrait { padding: 7px; }
   blockquote { margin-top: 22px; line-height: 1.4; }
-  .reunion-section, .gallery-section, .contributions-section, .contact-section { padding: 62px 0; }
+  .reunion-section, .gallery-section, .contact-section { padding: 62px 0; }
+  .contributions-section { padding: 48px 0; }
   .section-shell { width: calc(100% - 36px); }
-  .reunion-layout, .contributions-layout, .contact-layout { gap: 36px; }
+  .reunion-layout, .contact-layout { gap: 36px; }
+  .contributions-layout { gap: 28px; }
   .event-card-image { min-height: 170px; }
   .event-card-panel { padding: 27px 18px 29px; }
   .event-card-panel time { font-size: clamp(2rem, 11vw, 2.7rem); }
@@ -854,8 +912,10 @@ footer p { margin: 0; }
   .hotel-card address { text-align: center; }
   .hotel-button { width: min(260px, 100%); }
   .section-heading { margin-bottom: 30px; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .photo-placeholder, .photo-placeholder.large { min-height: 210px; grid-column: auto; }
+  .generation-gallery { gap: 14px 12px; }
+  .generation-card { width: calc((100% - 12px) / 2); }
+  .generation-card figcaption { font-size: 1rem; }
+  .memorial-portrait { padding: 14px 9px; }
   .zelle-email-block { margin: 24px 0 20px; padding: 17px 15px; }
   .zelle-email-row { align-items: stretch; flex-direction: column; }
   .zelle-email-row a { font-size: .82rem; line-height: 1.45; }
