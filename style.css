@@ -673,6 +673,15 @@ blockquote {
   font-style: italic;
   font-weight: 600;
 }
+.gallery-memorial-line {
+  margin: -21px auto 24px;
+  color: var(--gold-dark);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-align: center;
+  text-transform: uppercase;
+}
 .generation-gallery {
   display: flex;
   align-items: stretch;
@@ -716,6 +725,37 @@ blockquote {
   line-height: 1;
   text-align: center;
 }
+.memorial-heart {
+  display: block;
+  height: .85rem;
+  margin-top: 2px;
+  color: var(--burgundy);
+  font-family: var(--sans);
+  font-size: .7rem;
+  line-height: .85rem;
+}
+.memorial-legend {
+  display: flex;
+  margin: 26px auto 0;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-style: italic;
+  line-height: 1.15;
+  text-align: center;
+  white-space: nowrap;
+}
+.memorial-legend > span:nth-child(2) { color: var(--muted); font-style: normal; }
+.memorial-legend-heart {
+  color: var(--burgundy);
+  font-family: var(--sans);
+  font-size: 1.8rem;
+  font-style: normal;
+  line-height: 1;
+}
 .memorial-card { border-color: var(--gold); background: var(--burgundy); }
 .memorial-portrait {
   padding: 18px 12px;
@@ -734,6 +774,14 @@ blockquote {
   line-height: 1.25;
 }
 .memorial-card figcaption { color: var(--gold-light); }
+.memorial-card .memorial-heart {
+  width: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--burgundy);
+}
 .contributions-section {
   padding: 80px 0;
   background:
@@ -985,6 +1033,8 @@ footer p { margin: 0; }
   .generation-gallery { gap: 14px 12px; }
   .generation-card { width: calc((100% - 12px) / 2); }
   .generation-card figcaption { font-size: 1rem; }
+  .memorial-legend { gap: 8px; font-size: 1.18rem; }
+  .memorial-legend-heart { font-size: 1.55rem; }
   .memorial-portrait { padding: 14px 9px; }
   .zelle-email-block { margin: 24px 0 20px; padding: 17px 15px; }
   .zelle-email-row { align-items: stretch; flex-direction: column; }
