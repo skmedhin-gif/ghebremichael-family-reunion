@@ -626,6 +626,23 @@ blockquote {
   font-weight: 700;
   line-height: 1.1;
 }
+.hilton-booking-details {
+  display: grid;
+  margin: 17px 0 20px;
+  gap: 14px;
+  color: var(--green);
+  font-size: .75rem;
+}
+.hilton-included strong { display: block; margin-bottom: 5px; color: var(--burgundy); }
+.hilton-included ul { margin: 0; padding-left: 19px; line-height: 1.65; }
+.hilton-reservation-details { display: grid; margin: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.hilton-reservation-details > div { padding: 9px 10px; border: 1px solid rgba(189,133,41,.4); text-align: center; }
+.hilton-reservation-details dt { color: var(--muted); font-size: .67rem; text-transform: uppercase; }
+.hilton-reservation-details dd { margin: 3px 0 0; color: var(--burgundy); font-weight: 700; }
+.hilton-phone, .hilton-availability-note { margin: 0; text-align: center; }
+.hilton-phone { line-height: 1.55; }
+.hilton-phone a { color: var(--burgundy); font-weight: 700; }
+.hilton-availability-note { color: var(--muted); font-size: .68rem; font-style: italic; }
 .marriott-rate { display: grid; margin: 24px 0 17px; text-align: center; }
 .marriott-rate span { color: var(--muted); font-size: .72rem; }
 .hotel-detail { margin: 17px 0 20px; color: var(--green); font-size: .75rem; text-align: center; }
@@ -1028,6 +1045,10 @@ footer p { margin: 0; }
   .hotel-card { padding: 22px 20px; }
   .hotel-card-header { grid-template-columns: 1fr; gap: 7px; text-align: center; }
   .hotel-card address { text-align: center; }
+  .hotel-rates { gap: 7px; }
+  .hotel-rates > div { padding-inline: 5px; }
+  .hotel-rates dd { font-size: 1.08rem; }
+  .hilton-reservation-details { grid-template-columns: 1fr; gap: 8px; }
   .hotel-button { width: min(260px, 100%); }
   .section-heading { margin-bottom: 30px; }
   .generation-gallery { gap: 14px 12px; }
