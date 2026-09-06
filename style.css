@@ -708,7 +708,7 @@ blockquote {
 }
 .generation-card {
   display: flex;
-  width: calc((100% - 70px) / 6);
+  width: calc((100% - 84px) / 7);
   min-width: 0;
   margin: 0;
   padding: 7px 7px 0;
@@ -980,7 +980,7 @@ footer p { margin: 0; }
   .contributions-copy .section-ornament { justify-content: center; }
   .contributions-copy > p:not(.eyebrow, .contribution-note), .contribution-note { margin-right: auto; margin-left: auto; }
   .welcome-inner { width: min(740px, calc(100% - 40px)); }
-  .generation-card { width: calc((100% - 42px) / 4); }
+  .generation-card { width: calc((100% - 56px) / 5); }
 }
 @media (max-width: 600px) {
   html { scroll-padding-top: 78px; }
