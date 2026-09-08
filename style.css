@@ -887,9 +887,12 @@ blockquote {
 .contact-section { padding: 100px 0; background: var(--green); color: var(--white); }
 .contact-section h2 { color: var(--white); }
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; }
-.contact-card { display: flex; align-items: center; gap: 22px; padding: 32px; border: 1px solid rgba(227,189,104,.45); background: rgba(255,255,255,.06); }
-.contact-card > span { color: var(--gold-light); font-size: 2rem; }
-.contact-card h3, .contact-card p { margin-bottom: 2px; }
+.contact-copy p:last-child { margin-bottom: 0; }
+.contact-card { border: 1px solid rgba(227,189,104,.45); background: rgba(255,255,255,.06); }
+.contact-method { display: flex; align-items: center; gap: 22px; padding: 25px 32px; }
+.contact-method + .contact-method { border-top: 1px solid rgba(227,189,104,.3); }
+.contact-method > span { color: var(--gold-light); font-size: 2rem; }
+.contact-method h3, .contact-method p { margin-bottom: 2px; }
 .contact-card a {
   color: var(--gold-light);
   font-weight: 600;
@@ -1064,9 +1067,9 @@ footer p { margin: 0; }
   .contribution-note { padding-left: 12px; text-align: left; }
   .qr-card { width: min(100%, 285px); padding: 17px; }
   .qr-card figcaption { margin-bottom: 14px; font-size: 1.2rem; }
-  .contact-card { gap: 14px; padding: 22px 18px; }
-  .contact-card > span { flex: 0 0 auto; font-size: 1.6rem; }
-  .contact-card > div { min-width: 0; }
+  .contact-method { gap: 14px; padding: 20px 18px; }
+  .contact-method > span { flex: 0 0 auto; font-size: 1.6rem; }
+  .contact-method > div { min-width: 0; }
   .contact-card a { font-size: .82rem; line-height: 1.45; }
   footer { align-items: flex-start; gap: 10px; flex-direction: column; }
 }
