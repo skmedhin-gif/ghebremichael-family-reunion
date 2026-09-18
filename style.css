@@ -810,25 +810,50 @@ blockquote {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
-.contribution-rates > div {
+.contribution-rate-card {
+  display: flex;
   padding: 15px 17px;
+  flex-direction: column;
+  align-items: flex-start;
   border: 1px solid rgba(189,133,41,.55);
   background: rgba(255,255,255,.58);
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
-.contribution-rates dt {
+.contribution-rate-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 9px 22px rgba(62,27,15,.12);
+  transform: translateY(-2px);
+}
+.contribution-rate-card:focus-visible {
+  outline: 3px solid var(--burgundy);
+  outline-offset: 3px;
+  border-color: var(--gold);
+}
+.contribution-rate-label {
   color: var(--green);
   font-size: .73rem;
   font-weight: 700;
   letter-spacing: .035em;
   line-height: 1.35;
 }
-.contribution-rates dd {
-  margin: 5px 0 0;
+.contribution-rate-amount {
+  margin-top: 5px;
   color: var(--burgundy);
   font-family: var(--serif);
   font-size: 2rem;
   font-weight: 700;
   line-height: 1;
+}
+.contribution-rate-action {
+  margin-top: 10px;
+  color: var(--gold-dark);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 .contribution-guidance {
   max-width: 680px;
