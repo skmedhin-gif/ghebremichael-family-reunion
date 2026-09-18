@@ -789,15 +789,57 @@ blockquote {
   align-items: center;
   gap: clamp(42px, 6vw, 78px);
 }
-.contributions-copy > p:not(.eyebrow, .contribution-note) {
+.zelle-instruction {
   max-width: 680px;
-  margin-top: 24px;
+  margin: 18px 0 0;
   color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.5;
 }
 .contributions-copy .section-ornament { justify-content: flex-start; }
+.contribution-heading {
+  margin: 24px 0 12px;
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+.contribution-rates {
+  display: grid;
+  max-width: 720px;
+  margin: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.contribution-rates > div {
+  padding: 15px 17px;
+  border: 1px solid rgba(189,133,41,.55);
+  background: rgba(255,255,255,.58);
+}
+.contribution-rates dt {
+  color: var(--green);
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .035em;
+  line-height: 1.35;
+}
+.contribution-rates dd {
+  margin: 5px 0 0;
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.contribution-guidance {
+  max-width: 680px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.5;
+}
 .zelle-email-block {
   max-width: 720px;
-  margin: 30px 0 25px;
+  margin: 14px 0 22px;
   padding: 20px 22px;
   border-left: 4px solid var(--gold);
   background: var(--white);
@@ -842,7 +884,15 @@ blockquote {
   padding-left: 17px;
   border-left: 2px solid var(--green);
   color: var(--green);
-  font-size: .9rem;
+  font-size: .84rem;
+}
+.transparency-note {
+  max-width: 680px;
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-size: .72rem;
+  font-style: italic;
+  line-height: 1.55;
 }
 .qr-card {
   width: min(100%, 355px);
@@ -959,7 +1009,7 @@ footer p { margin: 0; }
   .contributions-layout { gap: 38px; }
   .contributions-copy { text-align: center; }
   .contributions-copy .section-ornament { justify-content: center; }
-  .contributions-copy > p:not(.eyebrow, .contribution-note), .contribution-note { margin-right: auto; margin-left: auto; }
+  .zelle-instruction, .contribution-guidance, .contribution-note, .transparency-note { margin-right: auto; margin-left: auto; }
   .welcome-inner { width: min(740px, calc(100% - 40px)); }
   .generation-card { width: calc((100% - 56px) / 5); }
 }
@@ -1036,7 +1086,8 @@ footer p { margin: 0; }
   .memorial-legend { gap: 8px; font-size: 1.18rem; }
   .memorial-legend-heart { font-size: 1.55rem; }
   .memorial-portrait { padding: 14px 9px; }
-  .zelle-email-block { margin: 24px 0 20px; padding: 17px 15px; }
+  .zelle-email-block { margin: 18px 0; padding: 17px 15px; }
+  .contribution-rates { grid-template-columns: 1fr; }
   .zelle-email-row { align-items: stretch; flex-direction: column; }
   .zelle-email-row a { font-size: .82rem; line-height: 1.45; }
   .copy-email-button { min-height: 44px; align-self: center; padding-inline: 18px; }
