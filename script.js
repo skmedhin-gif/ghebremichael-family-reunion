@@ -73,6 +73,29 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 const revealItems = document.querySelectorAll(".reveal");
 
 const copyEmailButton = document.querySelector(".copy-email-button");
+const contributionRateCards = document.querySelectorAll(".contribution-rate-card");
+
+if (copyEmailButton && contributionRateCards.length) {
+  const email = copyEmailButton.dataset.copyEmail;
+  const status = copyEmailButton.closest(".zelle-email-block").querySelector(".copy-status");
+  let cardStatusTimeout;
+
+  contributionRateCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      if (!navigator.clipboard?.writeText) return;
+
+      navigator.clipboard.writeText(email).then(() => {
+        window.clearTimeout(cardStatusTimeout);
+        status.textContent = "Zelle email copied — open your banking app to complete payment.";
+        cardStatusTimeout = window.setTimeout(() => {
+          status.textContent = "";
+        }, 3500);
+      }).catch(() => {
+        // The card's native anchor still scrolls to the Zelle payment details.
+      });
+    });
+  });
+}
 
 if (copyEmailButton) {
   copyEmailButton.addEventListener("click", async () => {
